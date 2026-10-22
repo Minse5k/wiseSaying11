@@ -3,6 +3,7 @@ package com.back.domain.wiseSaying.repository;
 import com.back.domain.wiseSaying.entity.WiseSaying;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class WiseSayingRepository {
@@ -24,7 +25,9 @@ public class WiseSayingRepository {
     }
 
     public List<WiseSaying> reverseList() {
-        return wiseList.reversed();
+        List<WiseSaying> reverseList = new ArrayList<>(wiseList);
+        Collections.reverse(reverseList);
+        return reverseList;
     }
 
     public boolean delete(int id) {
