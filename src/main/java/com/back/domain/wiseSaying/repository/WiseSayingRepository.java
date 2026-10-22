@@ -17,14 +17,6 @@ public class WiseSayingRepository {
         wiseList.add(wiseSaying);
     }
 
-    public WiseSaying write(String author, String content) {
-        WiseSaying item = new WiseSaying(author, content);
-
-        wiseList.add(item);
-
-        return item;
-    }
-
     public WiseSaying findById(int id) {
         return wiseList.stream()
                 .filter(e -> e.getId() == id)
