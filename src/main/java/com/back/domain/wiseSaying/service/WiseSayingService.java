@@ -2,9 +2,7 @@ package com.back.domain.wiseSaying.service;
 
 import com.back.domain.wiseSaying.entity.WiseSaying;import com.back.domain.wiseSaying.repository.WiseSayingRepository;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 public class WiseSayingService {
     WiseSayingRepository wiseSayingRepository = new WiseSayingRepository();
@@ -22,8 +20,7 @@ public class WiseSayingService {
     }
 
     public void edit(WiseSaying item, String author, String content) {
-        item.setAuthor(author);
-        item.setContent(content);
+        wiseSayingRepository.edit(item, author, content);
     }
 
     public List<WiseSaying> reverseList() {

@@ -4,7 +4,6 @@ import com.back.domain.wiseSaying.entity.WiseSaying;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 public class WiseSayingRepository {
     List<WiseSaying> wiseList = new ArrayList<>();
@@ -30,5 +29,10 @@ public class WiseSayingRepository {
 
     public boolean delete(int id) {
         return wiseList.removeIf(e -> e.getId() == id);
+    }
+
+    public void edit(WiseSaying item, String author, String content) {
+        item.setAuthor(author);
+        item.setContent(content);
     }
 }

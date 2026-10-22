@@ -7,7 +7,7 @@ import com.back.domain.wiseSaying.service.WiseSayingService;
 import java.util.*;
 
 public class WiseSayingController {
-    WiseSayingService wiseSayingService = new WiseSayingService();
+    private final WiseSayingService wiseSayingService = new WiseSayingService();
     private final Scanner sc;
 
     public WiseSayingController(Scanner sc) {

@@ -23,17 +23,6 @@ public class Rq {
                         paramUnit -> paramUnit[0],
                         paramUnit -> paramUnit.length==2 ? paramUnit[1] : ""
                 ));
-
-        for(String param : query) {
-            if(param.isEmpty()) continue;
-
-            String[] paramUnit = param.split("=", 2);
-
-            String key = paramUnit[0];
-            String value = paramUnit.length == 2 ? paramUnit[1] : "";
-
-            paramsMap.put(key, value);
-        }
     }
 
     public String getActionName() {
