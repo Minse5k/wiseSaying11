@@ -1,5 +1,7 @@
 package com.back;
 
+import com.back.domain.system.controller.SystemController;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -15,13 +17,18 @@ public class App {
     void run() {
         System.out.println("== 명언 앱 ==");
 
-        while (!isEnd) {
+        SystemController systemController = new SystemController();
+
+        while (true) {
             System.out.print("명령) ");
             Rq rq = new Rq(sc.nextLine().trim());
             String cmd = rq.getActionName();
 
             switch (cmd) {
-                case "종료" -> isEnd = true;
+                case "종료" -> {
+                    systemController.actionExit();
+                    return;
+                }
                 case "등록" -> actionRegister();
                 case "목록" -> actionList();
                 case "삭제" -> actionDelete(rq);
