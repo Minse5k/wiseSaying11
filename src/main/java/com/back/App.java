@@ -3,11 +3,7 @@ package com.back;
 import com.back.domain.system.controller.SystemController;
 import com.back.domain.wiseSaying.controller.WiseSayingController;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
 import java.util.Scanner;
-import java.util.Comparator;
 
 public class App {
     Scanner sc = new Scanner(System.in);
